@@ -13,7 +13,25 @@ describe "test" {
 	var frozen = new EmpresaDeDibujo(alto = 10, ancho =15)
 	
 	var remeraGrisConDibujo = new RemeraSublimada (talle = 42, color = "Gris", dibujo = frozen,tieneConvenio = true)
-		
+	
+	var remeraGris1 = new RemeraLisa ( talle = 44 )
+	
+	var flores = new Sucursal()
+	
+	var pedido1 = new Pedido()
+	
+    fixture {
+    	pedido1.sucursal(flores)
+    	flores.agregarPedido(pedido1)
+    	pedido1.agregarRemera(remeraGris1)
+    	pedido1.agregarRemera(remeraGris1)
+    	pedido1.agregarRemera(remeraGris1)
+    	pedido1.agregarRemera(remeraGris1)
+    	pedido1.agregarRemera(remeraGris1)
+    	
+    }
+	
+	
 	
 	test "costo de la remera talle 40 gris es 80" {
 		assert.equals(80, remeraGris.costo())
@@ -30,9 +48,8 @@ describe "test" {
 	test "costo de la remera gris con dibujo de frozen es 275 " {
 		assert.equals(275, remeraGrisConDibujo.costo())
 	}
-
     
-    }
+
 
 
 
