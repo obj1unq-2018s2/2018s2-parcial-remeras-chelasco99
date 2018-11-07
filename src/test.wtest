@@ -1,0 +1,38 @@
+import remeras.*
+import sucursales.*
+import comercios.*
+
+describe "test" {
+
+	var remeraGris = new RemeraLisa (talle = 40,color = "Gris")
+	
+	var remeraVerde = new RemeraLisa (talle = 42,color = "Verde")
+	
+	var remeraBlanca = new RemeraBordada (bordados = ["Rojo"],talle = 44,color = "Blanco")
+	
+	var frozen = new EmpresaDeDibujo(alto = 10, ancho =15)
+	
+	var remeraGrisConDibujo = new RemeraSublimada (talle = 42, color = "Gris", dibujo = frozen,tieneConvenio = true)
+		
+	
+	test "costo de la remera talle 40 gris es 80" {
+		assert.equals(80, remeraGris.costo())
+	}
+
+	test "costo de la remera verde talle 42 es 110" {
+		assert.equals(110, remeraVerde.costo())
+	}
+
+	test "costo de la remera blanca talle 44 con un bordado es 120" {
+		assert.equals(120, remeraBlanca.costo())
+	}
+
+	test "costo de la remera gris con dibujo de frozen es 275 " {
+		assert.equals(275, remeraGrisConDibujo.costo())
+	}
+
+    
+    }
+
+
+
