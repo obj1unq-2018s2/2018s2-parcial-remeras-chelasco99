@@ -21,8 +21,11 @@ describe "test" {
 	var pedido1 = new Pedido()
 	
     fixture {
+    	// TODO Pedido y sucursal deberían garantizar que su relación bidireccional se mantiene consistente ellos mismos
+    	// Lo estás hacienod a mano en el test, eso no está bien
     	pedido1.sucursal(flores)
     	flores.agregarPedido(pedido1)
+
     	pedido1.agregarRemera(remeraGris1)
     	pedido1.agregarRemera(remeraGris1)
     	pedido1.agregarRemera(remeraGris1)
@@ -30,9 +33,7 @@ describe "test" {
     	pedido1.agregarRemera(remeraGris1)
     	
     }
-	
-	
-	
+		
 	test "costo de la remera talle 40 gris es 80" {
 		assert.equals(80, remeraGris.costo())
 	}

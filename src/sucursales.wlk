@@ -28,10 +28,10 @@ class Pedido {
 	 
 	
     method calcularDescuento() = self.precioBase() * self.porcentaje() / 100 
-
-	method porcentaje() = remeras.sum { remera => remera.porcentaje() }
+ 
+	method porcentaje() = remeras.sum { remera => remera.porcentaje() } // TODO Esta sumatoria de porcentajes es ilógica.
 	
-	
+	// TODO No es lo pedido.
 	method sonRemerasDelMismoColor(color) = remeras.all { remera => remera.color() == color } 
 	
 	method existePedido() = sucursal.pedidos().contains(self) 

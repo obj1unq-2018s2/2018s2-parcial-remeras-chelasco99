@@ -1,11 +1,13 @@
 class RemeraLisa {
+	// TODO Estas inicializaciones de atributos en valores no-útiles... no son útiles. Evitalas.
 	var property talle = 0
 	var property color = ""
 	
 	method costo() = if ( talle >= 32 and talle <= 40 ) self.valorRemeraBasica()
 	                       else self.valorRemeraColorida()
 	
-	
+
+	// TODO Código repetido y nombres mal puestos.	
 	method valorRemeraBasica() = if (color == "Blanco" or color == "Negro" or color == "Gris") 80
 	                             else 80 + 8  
 	
@@ -30,6 +32,7 @@ class RemeraBordada inherits RemeraLisa {
 
 class RemeraSublimada inherits RemeraLisa {
 	var property dibujo
+	// TODO Este atributo debería ser de la empresa, no de la remera
 	var property tieneConvenio
 	
 	override method costo() = super() + self.costoDelSublimado() + dibujo.derechosDeAutor()
